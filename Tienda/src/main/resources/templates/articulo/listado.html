@@ -1,4 +1,3 @@
-
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>TODO supply a title</title>
@@ -6,11 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="/css/Menu.css" rel="stylesheet" type="text/css"/>
     </head>
+    
     <body>
         <header th:replace="layout/plantilla :: header" />
         <div class="contenido">
-            
-            <h2>Articulos disponibles</h2>
+            <h2>Lista de Articulos</h2>
+        <a th:href="@{/articulo/nuevo}">Nuevo Articulo</a>
         <br/>
         <br/>
         <div th:if="${articulos != null and !articulos.empty}">
@@ -18,16 +18,19 @@
             <thead>
             <th>Descripcion</th>
             <th>Precio</th>
+            <th>Existencias</th>
+            <th>Activa</th>
             
-            <th>Acciones</th>
+            
             </thead>
             <tbody>
                 <tr th:each="item : ${articulos}">
                     <td th:text="${item.descripcion}"></td>
-                    <td th:text="${item.precio}"></td>
-                   <td th:text="${#numbers.formatDecimal(item.precio, 3, 2)}"></td>
-                    <td><a th:href="@{/carrito/agregar/} + ${item.idArticulo}">Agregar</a> </td>
-                    
+                    <td th:text="${#numbers.formatDecimal(item.precio, 3, 2)}"></td>
+                    <td th:text="${item.existencias}"></td>
+                    <td><input type="checkbox" name="activa" th:checked="${item.activo}" disabled="true"></td>
+                    <td><a th:href="@{/articulo/modificar/} + ${item.idArticulo}">Modificar</a> </td>
+                    <td><a th:href="@{/articulo/eliminar/} + ${item.idArticulo}">Eliminar</a> </td>
                 </tr>
             </tbody>
         </table>

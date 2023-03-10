@@ -55,4 +55,26 @@ body{
 .nav-menu-link:hover{
     background-color: cyan;
     transition: 0.7s;
+    font-size: 22px;
+}
+.contenido{
+    background-color: lavender;
+    position: fixed;
+    top: 80px;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    overflow: auto;
+        
+}
+.footer{
+    background-color: black;
+    text-align: center;
+    color: white;
+    height: 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    
 }
