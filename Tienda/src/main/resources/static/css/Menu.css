@@ -57,7 +57,7 @@ body{
     transition: 0.7s;
     font-size: 22px;
 }
-.contenido{
+body{
     background-color: lavender;
     position: fixed;
     top: 80px;
