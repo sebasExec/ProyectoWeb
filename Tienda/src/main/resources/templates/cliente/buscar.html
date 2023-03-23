@@ -21,7 +21,7 @@
             
             <input type="submit" name="buscar" value="buscar" />
         </form>
-         <div th:if="${clientes != null and !clientes.empty}">
+         <div th:if="${resultados != null and !resultados.empty}">
             <table border="1">
             <thead>
             
@@ -32,7 +32,7 @@
             
             </thead>
             <tbody>
-                <tr th:each="item : ${clientes}">
+                <tr th:each="item : ${resultados}">
                     
                     <td th:text="${item.apellidos}"></td>
                     
@@ -45,7 +45,7 @@
         </table>
         </div>
         </div>
-        <div th:if="${clientes == null or clientes.empty}">
+        <div th:if="${resultados == null or resultados.empty}">
             La lista esta vacia
         </div>
         </div>

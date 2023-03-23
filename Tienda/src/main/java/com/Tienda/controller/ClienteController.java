@@ -51,7 +51,7 @@ public class ClienteController {
     @GetMapping("/cliente/buscar")
     public String buscarCliente(Cliente cliente, String apellidos, Model model) {
         List<Cliente> clientes = clienteService.findByApellidos(apellidos);
-        model.addAttribute("clientes", clientes);
+        model.addAttribute("resultados", clientes);
         return "/cliente/buscar";
     }
 
