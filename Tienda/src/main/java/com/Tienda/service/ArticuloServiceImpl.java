@@ -24,6 +24,7 @@ public class ArticuloServiceImpl implements ArticuloService {
         }
         return lista;
     }
+    
 
     @Override
     @Transactional(readOnly=true)

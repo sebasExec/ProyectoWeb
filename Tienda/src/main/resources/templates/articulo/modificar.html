@@ -1,4 +1,6 @@
-<html xmlns:th="http://www.thymeleaf.org">
+<html  xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://wwww.thymeleaf.org" 
+      xmlns:sec="http://thymeleaft.org/extras/spring-security">
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
@@ -17,7 +19,7 @@
         <form th:action="@{/articulo/guardar}" method="POST" th:object="${articulo}">
             <input type="hidden" name="idArticulo" th:field="*{idArticulo}"/>
             <label for="categoria">Categoria:</label>
-            <select th:field="*[idCategoria}">
+            <select th:field="*{idCategoria}">
                 <option th:each="item: ${categorias}"
                 th:value="${item.idCategoria}"
                  th:text="${item.descripcion}"/>
