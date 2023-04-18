@@ -17,7 +17,7 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class SecurityConfig {
 
-   /* @Bean
+    /* @Bean
     public UserDetailsService users() {
         UserDetails admin = User.builder()
                 .username("admin")
@@ -75,6 +75,11 @@ public class SecurityConfig {
                         "/categoria/listado",
                         "/cliente/listado")
                 .hasAnyRole("ADMIN", "VENDEDOR")
+                .requestMatchers(
+                        "/carrito/agregar/**",
+                        "/carrito/listado")
+                        
+                .hasRole("USER")
                 )
                 .formLogin((form) -> form
                 .loginPage("/login").permitAll()
